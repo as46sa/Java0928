@@ -15,7 +15,7 @@ public class LoginServlet extends HttpServlet {
     User user = new User();
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        System.out.println("成功");
+        System.out.println("1成功");
         String username = req.getParameter("username");
         String password = req.getParameter("password");
         if(userDao.queryUserByUsername(username).size()>0){
