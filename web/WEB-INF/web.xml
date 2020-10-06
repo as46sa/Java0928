@@ -3,10 +3,12 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
-
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
     <servlet>
         <servlet-name>UserServlet</servlet-name>
-        <servlet-class>com.shop.service.UserServlet</servlet-class>
+        <servlet-class>com.shop.controller.UserServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>UserServlet</servlet-name>
@@ -14,11 +16,19 @@
     </servlet-mapping>
     <servlet>
         <servlet-name>LoginServlet</servlet-name>
-        <servlet-class>com.shop.service.LoginServlet</servlet-class>
+        <servlet-class>com.shop.controller.LoginServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/LoginServlet</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>GoodsServlet</servlet-name>
+        <servlet-class>com.shop.controller.GoodsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GoodsServlet</servlet-name>
+        <url-pattern>/GoodsServlet</url-pattern>
     </servlet-mapping>
     <filter>
         <filter-name>AdminFilter</filter-name>
@@ -28,4 +38,29 @@
         <filter-name>AdminFilter</filter-name>
         <url-pattern>/pages/manager/*</url-pattern>
     </filter-mapping>
+    <servlet>
+        <servlet-name>Kaptcha</servlet-name>
+        <servlet-class>com.google.code.kaptcha.servlet.KaptchaServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Kaptcha</servlet-name>
+        <url-pattern>/Kaptcha.jpg</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>ClientGoodsServlet</servlet-name>
+        <servlet-class>com.shop.controller.ClientGoodsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ClientGoodsServlet</servlet-name>
+        <url-pattern>/ClientGoodsServlet</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>CartServlet</servlet-name>
+        <servlet-class>com.shop.controller.CartServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CartServlet</servlet-name>
+        <url-pattern>/CartServlet</url-pattern>
+    </servlet-mapping>
 </web-app>

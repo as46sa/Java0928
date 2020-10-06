@@ -22,7 +22,7 @@ public class AdminFilter implements Filter {
         UserDao userDao = new UserDaoImpl();
 
         if(userDao.queryUserByUsername(user+"").size() > 0){
-            httpServletRequest.getRequestDispatcher("/pages/user/regist.html").forward(servletRequest, servletResponse);
+            httpServletRequest.getRequestDispatcher("/pages/user/regist.jsp").forward(servletRequest, servletResponse);
             System.out.println("过滤成功1");
             return;
         }else{

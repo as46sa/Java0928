@@ -10,12 +10,13 @@
 <Script type="text/javascript">
     $(function () {
         // 给加入购物车按钮绑定单击事件
-        $("button.addToCart").click(function () {
+        $(".shop_add").click(function () {
             /**
              * 在事件响应的function 函数 中，有一个this 对象，这个this 对象，是当前正在响应事件的dom 对象
              * @type {jQuery}
              */
-            var goodsId = $(this).attr("goodsId ");
+            var goodsId = $(this).attr("value");
+            console.log(goodsId)
             location.href = "http://localhost:8080/Shop_war/CartServlet?action=addItem&id=" + goodsId;
         });
     });
@@ -24,13 +25,7 @@
 
 <div id="header">
     <img class="logo_img" alt="" src="static/img/logo.gif">
-    <span class="wel_word">网上商城</span>
-    <div>
-        <a href="pages/user/login.jsp" class="btn btn-lg btn-info">登录</a> |
-        <a href="pages/user/regist.jsp" class="btn btn-lg btn-info">注册</a> &nbsp;&nbsp;
-        <a href="pages/cart/cart.jsp" class="btn btn-lg btn-info">购物车</a>
-        <a href="pages/manager/manager.jsp" class="btn btn-lg btn-info">后台管理</a>
-    </div>
+    <%@include file="/pages/common/login_success_menu.jsp" %>
 </div>
 <div id="main">
     <div id="shop">
@@ -73,8 +68,8 @@
                         <span class="sp1">库存:</span>
                         <span class="sp2">${good.stock}</span>
                     </div>
-                    <div class="shop_add">
-                        <button class="btn btn-sm btn-info">加入购物车</button>
+                    <div class="shop_add" value="${good.id}">
+                        <button class="btn btn-sm btn-info" >加入购物车</button>
                     </div>
                 </div>
             </div>
@@ -82,7 +77,7 @@
 
 
     </div>
-
+    <%@include file="/pages/common/page_nav.jsp" %>
 
 </div>
 

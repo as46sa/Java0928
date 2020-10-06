@@ -1,21 +1,19 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="utf-8" %>
+
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>订单管理</title>
-		<link type="text/css" rel="stylesheet" href="../../static/css/style.css">
-		<link href="static/css/bootstrap.min.css" rel="stylesheet" />
-		<script src="static/js/jquery-1.11.3.min.js"></script>
-		<script src="static/js/bootstrap.js"></script>
+		<%@ include file="/pages/common/head.jsp" %>
 	</head>
 	<body>
 
 		<div id="header">
-			<img class="logo_img" alt="" src="../../static/img/logo.gif">
+			<img class="logo_img" alt="" src="static/img/logo.gif">
 			<span class="wel_word">订单管理系统</span>
 			<div>
-				<a href="shop_manager.html">商品管理</a>
-				<a href="order_manager.html">订单管理</a>
-				<a href="../../index.html">返回商城</a>
+				<a href="shop_manager.jsp">商品管理</a>
+				<a href="order_manager.jsp">订单管理</a>
+				<a href="index.jsp">返回商城</a>
 			</div>
 		</div>
 
@@ -51,10 +49,6 @@
 			</table>
 		</div>
 
-		<div id="bottom">
-			<span>
-				网上商城.Copyright &copy;2020
-			</span>
-		</div>
+		<%@include file="/pages/common/footer.jsp" %>
 	</body>
 </html>
