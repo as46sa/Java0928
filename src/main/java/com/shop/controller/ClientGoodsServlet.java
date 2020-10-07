@@ -53,7 +53,7 @@ public class ClientGoodsServlet extends HttpServlet {
         //2 调用GoodsService.page(pageNo，pageSize)：Page对象
         Page<Goods> page = goodsService.pageByPrice(pageNo,pageSize,min,max);
 
-        StringBuilder sb = new StringBuilder("client/GoodsServlet?action=pageByPrice");
+        StringBuilder sb = new StringBuilder("ClientGoodsServlet?action=pageByPrice");
         // 如果有最小价格的参数,追加到分页条的地址参数中
         if (req.getParameter("min") != null) {
             sb.append("&min=").append(req.getParameter("min"));

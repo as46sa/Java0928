@@ -15,9 +15,10 @@
 
 <div>
     <span>欢迎<span class="um_span">${sessionScope.user.username}</span>光临网上商城</span>
+    <a href="pages/cart/cart.jsp" >购物车</a>
     <a href="order/order.jsp">我的订单</a>
     <a href="UserServlet?action=logout">注销</a> &nbsp;&nbsp;
-    <a href=index.jsp">返回</a>
+    <a href="ClientGoodsServlet?action=page">返回</a>
 </div>
 </body>
 </html>

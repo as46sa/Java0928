@@ -10,6 +10,7 @@
 <Script type="text/javascript">
     $(function () {
         // 给加入购物车按钮绑定单击事件
+
         $(".shop_add").click(function () {
             /**
              * 在事件响应的function 函数 中，有一个this 对象，这个this 对象，是当前正在响应事件的dom 对象
@@ -30,17 +31,27 @@
 <div id="main">
     <div id="shop">
         <div class="shop_cond">
-            <form action="" method="get">
+            <form action="ClientGoodsServlet?action=pageByPrice" method="post">
                 价格：<input id="min" type="text" name="min" value=""> 元 -
                 <input id="max" type="text" name="max" value=""> 元
-                <button type="submit" class="btn btn-group-lg btn-primary">查询</button>
+                <button  type="submit" class="btn btn-group-lg btn-primary" >查询</button>
             </form>
         </div>
         <div style="text-align: center">
-            <span>您的购物车中有3件商品</span>
-            <div>
-                您刚刚将<span style="color: red">滚筒洗衣机</span>加入到了购物车中
-            </div>
+            <c:if test="${empty sessionScope.cart.items}">
+                <%--购物车为空的输出--%>
+                <span> </span>
+                <div>
+                    <span style="color: red">当前购物车为空</span>
+                </div>
+            </c:if>
+            <c:if test="${not empty sessionScope.cart.items}">
+                <%--购物车非空的输出--%>
+                <span>您的购物车中有 ${sessionScope.cart.totalCount} 件商品</span>
+                <div>
+                    您刚刚将<span style="color: red">${sessionScope.lastName}</span>加入到了购物车中
+                </div>
+            </c:if>
         </div>
         <c:forEach items="${requestScope.page.items}" var="good">
             <div class="b_list">
